@@ -2,9 +2,44 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>Таблица</title>
 </head>
 <body>
-    test 123
+    <br />
+    <hr />
+    <h1 id="FirstTitle">Часть 1</h1>
+
+    <h2><i>Текст</i></h2>
+    <p>Широкая электрификация южных губерний даст мощный толчок подъёму сельского хозяйства.</p>
+    <p>В чащах юга жил бы цитрус? Да, но фальшивый экземпляр!</p>
+    <p>Съешь же ещё этих мягких французских булок да выпей:
+        <ul>
+            <li>чаю</li>
+            <li>кофе</li>
+            <li>воды</li>
+        </ul>
+    </p>
+
+    <h2><i>Таблица</i></h2>
+    <table border="1" width="60%">
+        <thead>
+            <tr><th>Столбец 1</th><th>Столбец 2</th><th>Столбец 3</th><th>Столбец 4</th></tr>
+        </thead>
+        <tbody>
+            <tr><td rowspan="3">Rowspan</td><td colspan="3">Colspan</td></tr>
+            <tr><td>Текст в столбце 2</td><td>Текст в столбце 3</td><td>Текст в столбце 4</td></tr>
+            <tr><td>Текст в столбце 2</td><td>Текст в столбце 3</td><td>Текст в столбце 4<br />с переносом строки</td></tr>
+        </tbody>
+    </table>
+
+    <br />
+    <hr />
+    <h1>Часть 2</h1>
+    <h2>Картинки</h2>
+    <img src="Image 1.jpg" width="150" alt="Большой домик"><img src="Image 1.jpg" width="80" alt="Небольшой домик">
+    <h2>Ссылки</h2>
+    <a href="http://google.com/">Ссылка на Google</a><br />
+    <a href="Form.html">Ссылка на страницу с формой</a><br />
+    <a href="#FirstTitle">Ссылка на первый заголовок на этой странице</a><br />
 </body>
 </html>

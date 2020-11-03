@@ -1,0 +1,19 @@
+﻿div.specialText {
+    width: 60%;
+    margin: auto;
+    color: #676565;
+    font-family: Arial;
+}
+
+div.container {
+    width: 100%;
+    background: #feeed6;
+}
+
+.specialText h1 {
+    font-weight: normal;
+}
+
+.specialText b {
+    color: #378db2;
+}

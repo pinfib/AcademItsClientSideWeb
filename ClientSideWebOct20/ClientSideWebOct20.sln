@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HtmlTask", "HtmlTask\HtmlTa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CssTable", "CssTable\CssTable.csproj", "{4807B8C1-E3FE-4F3F-9AFC-D84D17CBCCB4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CssText", "CssText\CssText.csproj", "{802021CC-8E57-40E8-9B95-E21D393790FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{4807B8C1-E3FE-4F3F-9AFC-D84D17CBCCB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4807B8C1-E3FE-4F3F-9AFC-D84D17CBCCB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4807B8C1-E3FE-4F3F-9AFC-D84D17CBCCB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{802021CC-8E57-40E8-9B95-E21D393790FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{802021CC-8E57-40E8-9B95-E21D393790FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{802021CC-8E57-40E8-9B95-E21D393790FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{802021CC-8E57-40E8-9B95-E21D393790FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

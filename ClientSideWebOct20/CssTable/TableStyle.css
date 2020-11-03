@@ -1,0 +1,29 @@
+﻿div.tableContainer {
+    max-width: 1000px;
+}
+
+table.specialTable {
+    width: 80%;
+    margin: auto;
+    font-family: arial;
+    border: solid 1px #d3d3d3;
+    border-collapse: collapse;
+}
+
+.specialTable th {
+    text-align: left;
+    color: #ffffff;
+}
+
+.specialTable th, td {
+    padding: 7px;
+    border: solid 1px #d3d3d3;
+}
+
+.specialTable thead {
+    background-color: #3498db;
+}
+
+.specialTable tbody tr:nth-child(odd) {
+    background-color: #eeeeee;
+}

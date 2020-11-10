@@ -6,6 +6,32 @@
     <title></title>
 </head>
 <body>
-
+    <div class="dataContainer">
+        <div class="formContainer" action="/test.php" method="set">
+            <div>
+                <p><b><label for="nameInput">Ваше имя</label></b></p>
+                <input type="text" required id="nameInput" name="stringInput" placeholder="Ваше имя *" />
+            </div>
+            <div>
+                <p><b><label for="phoneInput">Ваш номер телефона</label></b></p>
+                <input type="text" id="phoneInput" name="stringInput" placeholder="Ваш номер телефона *"/>
+            </div>
+            <div>
+                <p><b><label for="emailOrVkInput">Ваш email или VK</label></b></p>
+                <input type="text" id="emailOrVkInput" name="stringInput" placeholder="Ваш email или VK *"/>
+            </div>
+            <div>
+                <p><b><label for="commentInput">Комментарий</label></b></p>
+                <textarea id="commentInput" name="textInput" placeholder="Комментарий (не обязательно)"></textarea>
+            </div>
+            <div>
+                <p>Заполните и отправьте форму, и мы перезвоним Вам по указанному номеру</p>
+            </div>
+            <div>
+                <button type="submit">Отправить заявку</button>
+            </div>
+            <div class="emptyElement"></div>
+        </div>
+    </div>
 </body>
 </html>

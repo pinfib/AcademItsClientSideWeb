@@ -1,2 +1,48 @@
-﻿body {
+﻿div.formContainer {
+    width: 60%;
+    margin: auto;
+    color: #676565;
+    font-family: Arial;
+    font-size: 12pt;
+    border: dashed 1px red;
+}
+
+div.dataContainer {
+    width: 100%;
+    background: #feeed6;
+    padding: 10px;
+   
+}
+
+div.dataContainer p {
+    margin: 15px 0px 5px 0px;
+        
+}
+
+div.dataContainer input, textarea {
+    width: 100%;
+    margin: 0px;
+    border: none;
+    border-radius: 0px;
+    padding: 6px;
+    font-family: Arial;
+    font-size: 12pt;
+    display: inline;
+    box-sizing: border-box;
+}
+
+div.dataContainer button {
+    border-radius: 0px;
+    padding: 10px;
+    margin: 5px 0px;
+    background-color: #378db2;
+    border: none;
+    color: #Ffffff;
+    font-weight: bold;
+    font-size: 12pt;
+    float: right;
+}
+
+div.emptyElement {
+    clear: both;
 }

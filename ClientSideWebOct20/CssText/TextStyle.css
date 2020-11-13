@@ -1,4 +1,4 @@
-﻿div.specialText {
+﻿div.special_text {
     width: 60%;
     margin: auto;
     color: #676565;
@@ -10,10 +10,10 @@ div.container {
     background: #feeed6;
 }
 
-.specialText h1 {
+.special_text h1 {
     font-weight: normal;
 }
 
-.specialText b {
+.special_text b {
     color: #378db2;
 }

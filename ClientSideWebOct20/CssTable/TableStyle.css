@@ -1,8 +1,8 @@
-﻿div.tableContainer {
+﻿div.table_container {
     max-width: 1000px;
 }
 
-table.specialTable {
+table.special_table {
     width: 80%;
     margin: auto;
     font-family: arial;
@@ -10,20 +10,20 @@ table.specialTable {
     border-collapse: collapse;
 }
 
-.specialTable th {
+.special_table th {
     text-align: left;
     color: #ffffff;
 }
 
-.specialTable th, td {
+.special_table th, td {
     padding: 7px;
     border: solid 1px #d3d3d3;
 }
 
-.specialTable thead {
+.special_table thead {
     background-color: #3498db;
 }
 
-.specialTable tbody tr:nth-child(odd) {
+.special_table tbody tr:nth-child(odd) {
     background-color: #eeeeee;
 }

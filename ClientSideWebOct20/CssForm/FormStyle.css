@@ -1,4 +1,4 @@
-﻿div.formContainer {
+﻿div.form_container {
     width: 60%;
     margin: auto;
     color: #676565;
@@ -6,17 +6,17 @@
     font-size: 12pt;
 }
 
-div.dataContainer {
+div.data_container {
     width: 100%;
     background: #feeed6;
     padding: 10px;
 }
 
-div.dataContainer p {
+div.data_container p {
     margin: 15px 0px 5px 0px;
 }
 
-div.dataContainer input, textarea {
+div.data_container input, textarea {
     width: 100%;
     margin: 0px;
     border: none;
@@ -28,7 +28,7 @@ div.dataContainer input, textarea {
     box-sizing: border-box;
 }
 
-div.dataContainer button {
+div.data_container button {
     border-radius: 0px;
     padding: 10px;
     margin: 5px 0px;
@@ -40,6 +40,6 @@ div.dataContainer button {
     float: right;
 }
 
-div.emptyElement {
+div.empty_element {
     clear: both;
 }

@@ -3,34 +3,36 @@
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="FormStyle.css" />
-    <title></title>
+    <title>Форма</title>
 </head>
 <body>
-    <div class="dataContainer">
-        <div class="formContainer" action="/test.php" method="set">
-            <div>
-                <p><b><label for="nameInput">Ваше имя</label></b></p>
-                <input type="text" required id="nameInput" name="stringInput" placeholder="Ваше имя *" />
-            </div>
-            <div>
-                <p><b><label for="phoneInput">Ваш номер телефона</label></b></p>
-                <input type="text" id="phoneInput" name="stringInput" placeholder="Ваш номер телефона *"/>
-            </div>
-            <div>
-                <p><b><label for="emailOrVkInput">Ваш email или VK</label></b></p>
-                <input type="text" id="emailOrVkInput" name="stringInput" placeholder="Ваш email или VK *"/>
-            </div>
-            <div>
-                <p><b><label for="commentInput">Комментарий</label></b></p>
-                <textarea id="commentInput" name="textInput" placeholder="Комментарий (не обязательно)"></textarea>
-            </div>
-            <div>
-                <p>Заполните и отправьте форму, и мы перезвоним Вам по указанному номеру</p>
-            </div>
-            <div>
-                <button type="submit">Отправить заявку</button>
-            </div>
-            <div class="emptyElement"></div>
+    <div class="data_container">
+        <div class="form_container">
+            <form action="/test.php" method="get">
+                <div>
+                    <p><b><label for="name_input">Ваше имя</label></b></p>
+                    <input type="text" required id="name_input" name="name" placeholder="Ваше имя *" />
+                </div>
+                <div>
+                    <p><b><label for="phone_input">Ваш номер телефона</label></b></p>
+                    <input type="text" required id="phone_input" name="phone" placeholder="Ваш номер телефона *" />
+                </div>
+                <div>
+                    <p><b><label for="email_or_vk_input">Ваш email или VK</label></b></p>
+                    <input type="text" required id="email_or_vk_input" name="email_or_vk" placeholder="Ваш email или VK *" />
+                </div>
+                <div>
+                    <p><b><label for="comment_input">Комментарий</label></b></p>
+                    <textarea id="comment_input" name="comment" placeholder="Комментарий (не обязательно)"></textarea>
+                </div>
+                <div>
+                    <p>Заполните и отправьте форму, и мы перезвоним Вам по указанному номеру</p>
+                </div>
+                <div>
+                    <button type="submit">Отправить заявку</button>
+                </div>
+                <div class="empty_element"></div>
+            </form>
         </div>
     </div>
 </body>

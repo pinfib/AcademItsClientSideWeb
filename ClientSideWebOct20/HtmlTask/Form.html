@@ -8,80 +8,77 @@
     <div>
         <form action="/test.php" method="get">
             <table>
-                <tr>
-                    <td colspan="2">
-                        <label for="firstName">Имя:</label>
-                        <input type="text" id="firstName" name="firstName" />
-                    </td>
-                    <td colspan="2">
-                        <label for="lastName">Фамилия:</label>
-                        <input type="text" id="lastName" name="lastName" />
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="4">
-                        <label for="info">Инфо:</label><br />
-                        <textarea id="info" cols="63"></textarea>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="formRadiobutton">Радиобаттон:</label>
-                    </td>
-                    <td>
-                        <label for="formCheckbox">Чекбокс:</label>
-                    </td>
-                    <td>
-                        <label for="formMultySelect">Список множественного выбора:</label>
-                    </td>
-                    <td>
-                        <label for="formSelect">Раскрывающийся список:</label>
-                    </td>
-                </tr>
-                <tr valign="top">
-                    <td>
-                        <p><input type="radio" name="formRadiobutton" value="radio1"><label>Вариант 1</label></p>
-                        <p><input type="radio" name="formRadiobutton" value="radio2"><label>Вариант 2</label></p>
-                        <p><input type="radio" name="formRadiobutton" value="radio3"><label>Вариант 3</label></p>
-                    </td>
-                    <td>
-                        <p><input type="checkbox" name="formCheckbox" value="check1">Вариант 1</p>
-                        <p><input type="checkbox" name="formCheckbox" value="check2">Вариант 2</p>
-                        <p><input type="checkbox" name="formCheckbox" value="check3">Вариант 3</p>
-                        <p><input type="checkbox" name="formCheckbox" value="check4">Вариант 4</p>
-                    </td>
-                    <td>
-                        <select size="3" multiple name="formMultySelect">
-                            <option value="1">Вариант 1</option>
-                            <option value="2">Вариант 2</option>
-                            <option value="3">Вариант 3</option>
-                            <option value="4">Вариант 4</option>
-                            <option value="5">Вариант 5</option>
-                        </select>
-                    </td>
-                    <td>
-
-                        <select name="formSelect">
-                            <option selected disabled>Выберите вариант...</option>
-                            <option value="10">Вариант 1</option>
-                            <option value="20">Вариант 2</option>
-                            <option value="30">Вариант 3</option>
-                            <option value="40">Вариант 4</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="reset">
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                        <button type="submit">Отправить</button>
-                    </td>
-                </tr>
+                <tbody>
+                    <tr>
+                        <td colspan="2">
+                            <label for="first_name">Имя:</label>
+                            <input type="text" id="first_name" name="first_name" />
+                        </td>
+                        <td colspan="2">
+                            <label for="last_name">Фамилия:</label>
+                            <input type="text" id="last_name" name="last_name" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <label for="info">Инфо:</label><br />
+                            <textarea id="info" name="commentary" cols="63"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Радиобаттон:</label>
+                        </td>
+                        <td>
+                            <label>Чекбокс:</label>
+                        </td>
+                        <td>
+                            <label for="form_multy_select">Список множественного выбора:</label>
+                        </td>
+                        <td>
+                            <label for="form_select">Раскрывающийся список:</label>
+                        </td>
+                    </tr>
+                    <tr valign="top">
+                        <td>
+                            <p><input type="radio" id="form_radiobutton_1" name="select_1" value="radio_1"><label for="form_radiobutton_1">Вариант 1</label></p>
+                            <p><input type="radio" id="form_radiobutton_2" name="select_1" value="radio_2"><label for="form_radiobutton_2">Вариант 2</label></p>
+                            <p><input type="radio" id="form_radiobutton_3" name="select_1" value="radio_3"><label for="form_radiobutton_3">Вариант 3</label></p>
+                        </td>
+                        <td>
+                            <p><input type="checkbox" id="form_checkbox_1" name="select_2" value="check_1"><label for="form_checkbox_1">Вариант 1</label></p>
+                            <p><input type="checkbox" id="form_checkbox_2" name="select_2" value="check_2"><label for="form_checkbox_2">Вариант 2</label></p>
+                            <p><input type="checkbox" id="form_checkbox_3" name="select_2" value="check_3"><label for="form_checkbox_3">Вариант 3</label></p>
+                            <p><input type="checkbox" id="form_checkbox_4" name="select_2" value="check_4"><label for="form_checkbox_4">Вариант 4</label></p>
+                        </td>
+                        <td>
+                            <select size="4" multiple id="form_multy_select" name="select_3">
+                                <option value="1">Вариант 1</option>
+                                <option value="2">Вариант 2</option>
+                                <option value="3">Вариант 3</option>
+                                <option value="4">Вариант 4</option>
+                                <option value="5">Вариант 5</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select id="form_select" name="select_4">
+                                <option selected disabled>Выберите вариант...</option>
+                                <option value="10">Вариант 1</option>
+                                <option value="20">Вариант 2</option>
+                                <option value="30">Вариант 3</option>
+                                <option value="40">Вариант 4</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="reset">
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td><button type="submit">Отправить</button></td>
+                    </tr>
+                </tbody>
             </table>
         </form>
     </div>

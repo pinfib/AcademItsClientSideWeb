@@ -5,78 +5,74 @@
 	// У страны есть название и список городов
 	// У города есть название и численность населения
 
-	function City(name, population)
-	{
+	function City(name, population) {
 		this.name = name;
 		this.population = population;
 	}
 
-	function Country(name, citiesList)
-	{
+	function Country(name, citiesList) {
 		this.name = name;
 		this.citiesList = citiesList;
 	}
 
-	ETR.countries = 
-	[
-		new Country("Страна 1", 
-		[ 
+	ETR.countries = [
+		new Country("Страна 1", [ 
 			new City("Город 1", 100), 
 			new City("Город 2", 200)
 		]),
-		new Country("Страна 2", 
-		[ 
+		new Country("Страна 2", [ 
 			new City("Город 1", 300),
 			new City("Город 2", 100), 
 			new City("Город 3", 200)
 		]),	
-		new Country("Страна 3", 
-		[ 
+		new Country("Страна 3", [ 
 			new City("Город 1", 300),
 			new City("Город 2", 500)
 		]),
-		new Country("Страна 4", 
-		[ 
+		new Country("Страна 4", [ 
 			new City("Город 1", 300),
 			new City("Город 2", 100)
 		]),
+		new Country("Страна 5", [ 
+			new City("Город 1", 300),
+			new City("Город 2", 100),
+			new City("Город 3", 700)
+		]),
+		new Country("Страна 6", [ ]),
 	];
 
+	console.log("Список стран:");
 	console.log(ETR.countries);
+	
 	// 2. Найдите страну/страны с максимальным количеством городов
 
 	ETR.maxCities = ETR.countries[0].citiesList.length; 
 	
-	ETR.countries.forEach(function (e) {ETR.maxCities = Math.max(e.citiesList.length, ETR.maxCities)});
+	ETR.countries.forEach(function (e) {
+			ETR.maxCities = Math.max(e.citiesList.length, ETR.maxCities)
+		});
 	
-	console.log(ETR.maxCities);
+	ETR.biggestCountries = ETR.countries.filter(function(e) {
+			if(e.citiesList.length == ETR.maxCities) {
+				return true;
+			}
+			
+			return false;
+		});
 	
-	ETR.biggestCountries = ETR.countries.filter(function(e) 
-	{
-		if(e.citiesList.length == ETR.maxCities)
-		{
-			return true;
-		}
-		
-		return false;
-	});
-	
+	console.log("Список стран c максимальным количеством городов:");
 	console.log(ETR.biggestCountries);
-	
-	console.log("--------------");
-	
+
 	// 3. Получите объект с информацией по всем странам такого вида: 
 	// ключ – название страны, 
 	// значение – суммарная численность по стране
 
-	function specialMap(key, value)
-	{
+	function specialMap(key, value) {
 		this.key = key;
 		this.value = value;
 	}
 
-	ETR.countriesMap = ETR.countries.map(function(e) 
-	{
+	ETR.countriesMap = ETR.countries.map(function(e) {
 		var totalPopulation = 0;
 		
 		e.citiesList.forEach(function(c) {
@@ -86,6 +82,7 @@
 		return new specialMap(e.name, totalPopulation);
 	});
 	
+	console.log("Информация по странам:");
 	console.log(ETR.countriesMap);
 	
 })();

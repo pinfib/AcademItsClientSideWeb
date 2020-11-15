@@ -5,8 +5,7 @@
 	
 	ETR.arrayInt1 = [];
 	
-	for(var i = 0; i < 20; i++)
-	{
+	for(var i = 0; i < 20; i++) {
 		ETR.arrayInt1.push(Math.round(Math.random () * 50));
 	}
 	
@@ -34,10 +33,8 @@
 	
 	// 4. Найдите сумму элементов массива, которые являются четными числами
 	
-	function isEvenNumber(a)
-	{
-		if (a % 2 == 0) 
-		{
+	function isEvenNumber(a) {
+		if (a % 2 == 0) {
 			return true;
 		}
 		return false;
@@ -56,8 +53,7 @@
 
 	ETR.arrayInt2 = [];
 
-	for(var i = 1; i <= 100; i++)
-	{
+	for(var i = 1; i <= 100; i++) {
 		ETR.arrayInt2.push(i);
 	}
 	

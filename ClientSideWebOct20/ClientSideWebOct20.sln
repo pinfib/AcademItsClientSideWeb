@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GabrielTask", "GabrielTask\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JavaScriptArrayTask", "JavaScriptArrayTask\JavaScriptArrayTask.csproj", "{043E5B68-6410-4595-9C6B-63F82ABB26D7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JavaScriptObjectsTask", "JavaScriptObjectsTask\JavaScriptObjectsTask.csproj", "{B34E921B-1CEC-4CE0-B5AE-6A9830AF711E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{043E5B68-6410-4595-9C6B-63F82ABB26D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{043E5B68-6410-4595-9C6B-63F82ABB26D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{043E5B68-6410-4595-9C6B-63F82ABB26D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B34E921B-1CEC-4CE0-B5AE-6A9830AF711E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B34E921B-1CEC-4CE0-B5AE-6A9830AF711E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B34E921B-1CEC-4CE0-B5AE-6A9830AF711E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B34E921B-1CEC-4CE0-B5AE-6A9830AF711E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

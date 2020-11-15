@@ -15,8 +15,7 @@
 	
 	// 2. Отсортируйте его по убыванию
 	
-	ETR.arrayInt1.sort((a, b) =>
-	{
+	ETR.arrayInt1.sort(function (a, b) {
 		if (a == b) return 0;
 		if (a < b) return 1;
 		return -1;
@@ -46,7 +45,9 @@
 	
 	ETR.sum = ETR.arrayInt1
 		.filter(isEvenNumber)
-		.reduce((result, number) => result + number);
+		.reduce(function (result, number) { 
+			return result + number;
+		});
 
 	console.log("Сумма чётных:");
 	console.log(ETR.sum);
@@ -67,7 +68,9 @@
 	
 	ETR.arraySquares = ETR.arrayInt2
 		.filter(isEvenNumber)
-		.map((a) => a = Math.pow(a, 2));
+		.map(function (a) {
+			return Math.pow(a, 2)
+		});
 	
 	console.log("Список квадратов четных чисел:");
 	console.log(ETR.arraySquares);

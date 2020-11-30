@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="Form.html" />
     <Content Include="FormStyle.css" />
+    <Content Include="Reset.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

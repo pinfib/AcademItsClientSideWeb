@@ -1,19 +1,39 @@
-﻿div.special_text {
-    width: 60%;
+﻿.special_text {
+    max-width: 740px;
     margin: auto;
+    padding: 7px;
     color: #676565;
     font-family: Arial;
-}
-
-div.container {
-    width: 100%;
+    font-size: 15px;
+    line-height: 1.3em;
+    text-align: justify;
     background: #feeed6;
 }
 
-.special_text h1 {
-    font-weight: normal;
+.container {
+    width: 100%;
 }
 
-.special_text b {
+.special_text h1 {
+    text-align: left;
+    font-size: 2em;
+    line-height: 1em;
+    margin-bottom: 5px;
+}
+
+.special_text p {
+    margin-bottom: 7px;
+}
+
+.short_info b {
     color: #378db2;
+    font-weight: bold;
+}
+
+.other_info p {
+    text-indent: 1.5em;
+}
+
+.other_info p:last-child {
+    margin-bottom: 0;
 }

@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Reset.css" />
     <Content Include="Table.html" />
     <Content Include="TableStyle.css" />
     <Content Include="Web.config" />

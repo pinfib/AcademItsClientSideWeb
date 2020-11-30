@@ -1,88 +1,107 @@
 ﻿(function () {
-    var ETR = ETR || {};
-	
-	// 1. Создайте массив объектов-стран
-	// У страны есть название и список городов
-	// У города есть название и численность населения
 
-	function City(name, population) {
-		this.name = name;
-		this.population = population;
-	}
+    // 1. Создайте массив объектов-стран
+    // У страны есть название и список городов
+    // У города есть название и численность населения
 
-	function Country(name, citiesList) {
-		this.name = name;
-		this.citiesList = citiesList;
-	}
+    var countries = [
+        {
+            "countryName": "Страна 1",
+            "citiesList": [
+                {
+                    "cityName": "Город 1",
+                    "population": 100
+                },
+                {
+                    "cityName": "Город 2",
+                    "population": 200
+                }
+            ]
+        },
+        {
+            "countryName": "Страна 2",
+            "citiesList": [
+                {
+                    "cityName": "Город 1",
+                    "population": 200
+                },
+                {
+                    "cityName": "Город 2",
+                    "population": 300
+                },
+                {
+                    "cityName": "Город 3",
+                    "population": 100
+                }
+            ]
+        },
+        {
+            "countryName": "Страна 3",
+            "citiesList": [
+                {
+                    "cityName": "Город 1",
+                    "population": 100
+                }
+            ]
+        },
+        {
+            "countryName": "Страна 4",
+            "citiesList": [
+                {
+                    "cityName": "Город 1",
+                    "population": 150
+                },
+                {
+                    "cityName": "Город 2",
+                    "population": 100
+                },
+                {
+                    "cityName": "Город 3",
+                    "population": 100
+                }
+            ]
+        },
+        {
+            "countryName": "Страна 5",
+            "citiesList": []
+        }
+    ];
 
-	ETR.countries = [
-		new Country("Страна 1", [ 
-			new City("Город 1", 100), 
-			new City("Город 2", 200)
-		]),
-		new Country("Страна 2", [ 
-			new City("Город 1", 300),
-			new City("Город 2", 100), 
-			new City("Город 3", 200)
-		]),	
-		new Country("Страна 3", [ 
-			new City("Город 1", 300),
-			new City("Город 2", 500)
-		]),
-		new Country("Страна 4", [ 
-			new City("Город 1", 300),
-			new City("Город 2", 100)
-		]),
-		new Country("Страна 5", [ 
-			new City("Город 1", 300),
-			new City("Город 2", 100),
-			new City("Город 3", 700)
-		]),
-		new Country("Страна 6", [ ]),
-	];
+    (function () {
+        console.log("Список стран:");
+        console.log(countries);
+    })();
 
-	console.log("Список стран:");
-	console.log(ETR.countries);
-	
-	// 2. Найдите страну/страны с максимальным количеством городов
+    // 2. Найдите страну/страны с максимальным количеством городов
 
-	ETR.maxCities = ETR.countries[0].citiesList.length; 
-	
-	ETR.countries.forEach(function (e) {
-			ETR.maxCities = Math.max(e.citiesList.length, ETR.maxCities)
-		});
-	
-	ETR.biggestCountries = ETR.countries.filter(function(e) {
-			if(e.citiesList.length == ETR.maxCities) {
-				return true;
-			}
-			
-			return false;
-		});
-	
-	console.log("Список стран c максимальным количеством городов:");
-	console.log(ETR.biggestCountries);
+    (function () {
+        var maxCitiesCount = countries.reduce(function (result, country) {
+            return Math.max(country.citiesList.length, result);
+        }, 0);
 
-	// 3. Получите объект с информацией по всем странам такого вида: 
-	// ключ – название страны, 
-	// значение – суммарная численность по стране
+        var biggestCountries = countries.filter(function (country) {
+            return country.citiesList.length === maxCitiesCount;
+        });
 
-	function specialMap(key, value) {
-		this.key = key;
-		this.value = value;
-	}
+        console.log("Список стран c максимальным количеством городов:");
+        console.log(biggestCountries);
+    })();
 
-	ETR.countriesMap = ETR.countries.map(function(e) {
-		var totalPopulation = 0;
-		
-		e.citiesList.forEach(function(c) {
-			totalPopulation = totalPopulation + c.population;
-		});
-		
-		return new specialMap(e.name, totalPopulation);
-	});
-	
-	console.log("Информация по странам:");
-	console.log(ETR.countriesMap);
-	
+    // 3. Получите объект с информацией по всем странам такого вида: 
+    // ключ – название страны, 
+    // значение – суммарная численность по стране
+
+    (function () {
+        var countriesMap = countries.map(function (country) {
+            var totalPopulation = country.citiesList.reduce(function (result, city) { return result + city.population; }, 0);
+
+            return {
+                "countryName": country.countryName,
+                "totalPopulation": totalPopulation
+            }
+        });
+
+        console.log("Информация по странам:");
+        console.log(countriesMap);
+    })();
 })();

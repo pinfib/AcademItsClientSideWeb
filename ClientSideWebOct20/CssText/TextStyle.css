@@ -1,17 +1,31 @@
-﻿.special_text {
-    max-width: 740px;
-    margin: auto;
-    padding: 7px;
+﻿@media (max-width: 750px) {
+    .special_text {
+        width: 100%;
+    }
+}
+
+@media (min-width: 751px) {
+    .special_text {
+        width: 740px;
+        margin: auto;
+    }
+}
+
+.special_text {
+    padding: 10px;
     color: #676565;
     font-family: Arial;
     font-size: 15px;
     line-height: 1.3em;
     text-align: justify;
     background: #feeed6;
+    box-sizing: border-box;
 }
 
 .container {
     width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
 }
 
 .special_text h1 {

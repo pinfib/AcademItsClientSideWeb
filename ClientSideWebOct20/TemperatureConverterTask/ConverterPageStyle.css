@@ -1,0 +1,85 @@
+﻿@media (max-width: 720px) {
+    .data_container {
+        width: 100%;
+    }
+}
+
+@media (min-width: 721px) {
+    .data_container {
+        width: 700px;
+        margin: auto;
+    }
+}
+
+.data_container,
+.converter_input,
+.temperature_result,
+.converter_container {
+    box-sizing: border-box;
+}
+
+.data_container,
+.data_container input,
+.data_container button {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+.converter_container,
+.data_container div,
+.temperature_result p {
+    padding: 10px;
+}
+
+.converter_container {
+    width: 100%;
+    background: darkcyan;
+}
+
+.data_container {
+    width: 700px;
+    margin: auto;
+    text-align: center;
+    background: lightcyan;
+}
+
+.data_container h1 {
+    font-size: 2em;
+    line-height: 1em;
+    padding: 15px 0;
+}
+
+.data_container input,
+.data_container button {
+    padding: 0.5em;
+    border-radius: 0;
+    outline: 0;
+}
+
+.data_container input {
+    border: none;
+    width: 40%;
+}
+
+.data_container button {
+    border: #ccc outset 1px;
+    font-weight: bold;
+    background: white;
+}
+
+.data_container button:hover {
+        background: darkcyan;
+        color: white;
+        border-style: inset;
+        cursor: pointer;
+}
+
+.temperature_result {
+    width: 50%;
+    min-height: 100px;
+    float: left;
+}
+
+.empty_element {
+    clear: both;
+}

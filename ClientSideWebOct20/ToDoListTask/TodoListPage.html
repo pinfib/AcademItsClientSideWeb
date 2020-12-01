@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="Reset.css" />
+    <link rel="stylesheet" type="text/css" href="TodoListStyle.css" />
+    <script defer src="TodoListJavaScript.js"></script>
+    <title>To-do List</title>
+</head>
+<body>
+    <div class="todo_list_container">
+        <div class="input_container">
+            <h1>To-do List</h1>
+            <div>
+                <input type="text" required id="task_input" placeholder="Введите текст..." />
+            </div>
+            <div>
+                <button id="task_addition">Добавить задачу</button>
+            </div>
+            <div class="error_message"><p></p></div>
+        </div>
+        <div class="elements_container">
+            <p>Список задач:</p>
+            <ul id="todo_list"></ul>
+        </div>
+        <div class="empty_element"></div>
+    </div>
+</body>
+</html>

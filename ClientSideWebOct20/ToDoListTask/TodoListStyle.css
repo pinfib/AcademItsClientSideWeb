@@ -11,31 +11,13 @@
     }
 }
 
-.todo_list_container,
-.todo_list_container input,
-.todo_list_container button,
-.elements_container input,
-.error_message p {
-    font-family: Arial, sans-serif;
-    font-size: 17px;
+.input_container {
+    width: 40%;
 }
 
-.todo_list_container,
-.input_container,
 .elements_container {
-    padding: 15px;
-}
-
-.todo_list_container h1 {
-    font-size: 2em;
-    padding: 0 0 15px 15px;
-}
-
-.todo_list_container,
-.input_container,
-.elements_container,
-.error_message {
-    box-sizing: border-box;
+    width: 60%;
+    background: #f0e68c;
 }
 
 .input_container,
@@ -44,26 +26,39 @@
     min-height: 220px;
 }
 
-.input_container {
-    width: 40%;
+.todo_list_container,
+.input_container,
+.elements_container,
+.error_message,
+.input_container input,
+.input_container button {
+    box-sizing: border-box;
 }
 
-.elements_container {
-    width: 60%;
+.todo_list_container,
+.todo_list_container input,
+.todo_list_container button,
+.elements_container input,
+.elements_container button,
+.error_message p {
+    font-family: Arial, sans-serif;
+    font-size: 17px;
 }
 
+.todo_list_container,
+.input_container,
+.elements_container,
 .error_message {
-    width: 100%;
+    padding: 15px;
+}
+
+.todo_list_container h1 {
+    font-size: 2em;
+    margin: 5px;
+}
+
+.error_message p {
     color: red;
-    padding: 5px;
-}
-
-.empty_element {
-    clear: both;
-}
-
-.elements_container {
-    background: #f0e68c;
 }
 
 .input_container input,
@@ -75,15 +70,12 @@
 }
 
 .input_container input,
-.input_container button
-{
+.input_container button {
     padding: 10px;
     margin: 5px;
+    width: 85%;
 }
 
-.input_container input {
-    width: 80%;
-}
 
 .input_container button {
     background: #f0e68c;
@@ -99,10 +91,8 @@
 .elements_container ul {
     list-style-position: outside;
     list-style-type: disc;
-}
-
-.elements_container li {
-    margin-left: 15px;
+    margin-left: 20px;
+    padding: 10px;
 }
 
 .elements_container li + li {
@@ -124,6 +114,10 @@
 }
 
 .elements_container input {
-    min-width: 150px;
+    width: 150px;
     font-size: 0.8em;
+}
+
+.empty_element {
+    clear: both;
 }

@@ -75,11 +75,6 @@
     // 2. Найдите страну/страны с максимальным количеством городов
 
     (function () {
-        /*var maxCitiesCount = countries[0].citiesList.length;
-
-        countries.forEach(function (country) {
-            maxCitiesCount = Math.max(country.citiesList.length, maxCitiesCount);
-        });*/
         var maxCitiesCount = countries.reduce(function (result, country) {
             return Math.max(country.citiesList.length, result);
         }, 0);

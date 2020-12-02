@@ -1,13 +1,4 @@
-﻿(function () {
-
-    function kelvinConverter(temperature) {
-        return temperature + 273.15;
-    }
-
-    function fahrenheitConverter(temperature) {
-        return temperature * 9 / 5 + 32;
-    }
-
+﻿document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("temperature_input").addEventListener("keydown", function (e) {
         if (e.keyCode === 13) {
             document.getElementById("convert_temperature").dispatchEvent(new Event("click"));
@@ -24,7 +15,7 @@
             return;
         }
 
-        document.getElementById("kelvin").textContent = kelvinConverter(temperature);
-        document.getElementById("fahrenheit").textContent = fahrenheitConverter(temperature);
+        document.getElementById("kelvin").textContent = temperature + 273.15;
+        document.getElementById("fahrenheit").textContent = temperature * 9 / 5 + 32;
     });
-})();
+});

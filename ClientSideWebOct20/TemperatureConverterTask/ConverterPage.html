@@ -8,26 +8,28 @@
     <title>Конвертер температур</title>
 </head>
 <body>
-<div class="converter_container">
-    <div class="data_container">
-        <h1>Конвертер температур</h1>
-        <div>
-            <label for="temperature_input">Введите температуру в градусах Цельсия:</label>
-            <input type="text" required id="temperature_input" placeholder="0"/>
+    <div class="converter_container">
+        <div class="data_container">
+            <div>
+                <h1>Конвертер температур</h1>
+            </div>
+            <div>
+                <label for="temperature_input">Введите температуру в градусах Цельсия:</label>
+                <input type="text" required id="temperature_input" placeholder="0" />
+            </div>
+            <div>
+                <button id="convert_temperature">Вывести результат</button>
+            </div>
+            <div class="temperature_result">
+                <p>Температура в градусах Фаренгейта:</p>
+                <p id="fahrenheit">0</p>
+            </div>
+            <div class="temperature_result">
+                <p>Температура в градусах Кельвина:</p>
+                <p id="kelvin">0</p>
+            </div>
+            <div class="empty_element"></div>
         </div>
-        <div>
-            <button id="convert_temperature">Вывести результат</button>
-        </div>
-        <div class="temperature_result">
-            <p>Температура в градусах Фаренгейта:</p>
-            <p id="fahrenheit">0</p>
-        </div>
-        <div class="temperature_result" >
-            <p>Температура в градусах Кельвина:</p>
-            <p id="kelvin">0</p>
-        </div>
-        <div class="empty_element"></div>
     </div>
-</div>
 </body>
 </html>

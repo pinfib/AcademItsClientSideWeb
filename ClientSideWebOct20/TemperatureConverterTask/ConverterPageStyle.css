@@ -11,6 +11,17 @@
     }
 }
 
+.converter_container {
+    width: 100%;
+    background: darkcyan;
+}
+
+.temperature_result {
+    width: 50%;
+    min-height: 100px;
+    float: left;
+}
+
 .data_container,
 .converter_input,
 .temperature_result,
@@ -31,11 +42,6 @@
     padding: 10px;
 }
 
-.converter_container {
-    width: 100%;
-    background: darkcyan;
-}
-
 .data_container {
     width: 700px;
     margin: auto;
@@ -46,7 +52,6 @@
 .data_container h1 {
     font-size: 2em;
     line-height: 1em;
-    padding: 15px 0;
 }
 
 .data_container input,
@@ -68,16 +73,10 @@
 }
 
 .data_container button:hover {
-        background: darkcyan;
-        color: white;
-        border-style: inset;
-        cursor: pointer;
-}
-
-.temperature_result {
-    width: 50%;
-    min-height: 100px;
-    float: left;
+    background: darkcyan;
+    color: white;
+    border-style: inset;
+    cursor: pointer;
 }
 
 .empty_element {

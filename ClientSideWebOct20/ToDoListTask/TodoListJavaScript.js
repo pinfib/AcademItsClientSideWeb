@@ -1,29 +1,40 @@
-﻿(function() {
-    var errorMessage = document.querySelector(".error_message").querySelector("p");
+﻿document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("task_addition").addEventListener("click", function () {
+        var errorMessage = document.querySelector(".error_message p");
 
+        var input = document.getElementById("task_input");
 
-    function createElement(text) {
+        if (input.value === "") {
+            errorMessage.textContent = "ОШИБКА! Текст заметки не должен быть пустым.";
+
+            return;
+        }
+
         var listItem = document.createElement("li");
-        listItem.innerHTML = "<div class='task_body'><button class='edit_button'>edit</button><button class='delete_button'>x</button><span class='text'></span></div><div class='task_edit'><button class='save_button'>save</button><button class='cancel_button'>cancel</button><input type='text' class='edit' /></div >";
 
-        listItem.querySelector(".task_edit").style.display = "none";
+        listItem.innerHTML = "<div class='task_body'>\
+                                <button class='edit_button'>edit</button><button class='delete_button'>x</button><span class='text'></span>\
+                            </div>\
+                            <div class='task_edit'>\
+                                <button class='save_button'>save</button><button class='cancel_button'>cancel</button><input type='text' class='edit' />\
+                            </div>";
 
-        listItem.querySelector(".text").textContent = text;
+        switchEditView(false);
 
-        listItem.querySelector(".edit_button").addEventListener("click", function() {
-            listItem.querySelector(".task_edit").style.display = "block";
-            listItem.querySelector(".task_body").style.display = "none";
+        listItem.querySelector(".text").textContent = input.value;
+
+        listItem.querySelector(".edit_button").addEventListener("click", function () {
+            switchEditView(true);
 
             listItem.querySelector(".edit").value = listItem.querySelector(".text").textContent;
         });
 
-        listItem.querySelector(".delete_button").addEventListener("click", function() {
+        listItem.querySelector(".delete_button").addEventListener("click", function () {
             listItem.parentNode.removeChild(listItem);
         });
 
-        listItem.querySelector(".cancel_button").addEventListener("click", function() {
-            listItem.querySelector(".task_edit").style.display = "none";
-            listItem.querySelector(".task_body").style.display = "block";
+        listItem.querySelector(".cancel_button").addEventListener("click", function () {
+            switchEditView(false);
         });
 
         listItem.querySelector(".save_button").addEventListener("click", function () {
@@ -33,30 +44,28 @@
                 return;
             }
 
+            errorMessage.textContent = "";
+
             listItem.querySelector(".text").textContent = listItem.querySelector(".edit").value;
 
-            listItem.querySelector(".task_edit").style.display = "none";
-            listItem.querySelector(".task_body").style.display = "block";
-
-            errorMessage.textContent = "";
+            switchEditView(false);
         });
 
-        return listItem;
-    }
-
-    document.getElementById("task_addition").addEventListener("click", function() {
-        var input = document.getElementById("task_input");
-
-        if (input.value === "") {
-            errorMessage.textContent = "ОШИБКА! Текст заметки не должен быть пустым.";
-
-            return;
-        }
-        
-        document.getElementById("todo_list").appendChild(createElement(input.value));
+        document.getElementById("todo_list").appendChild(listItem);
 
         input.value = "";
         errorMessage.textContent = "";
-    });
 
-})();
+        function switchEditView(isEdit) {
+            if (isEdit) {
+                listItem.querySelector(".task_edit").style.display = "block";
+                listItem.querySelector(".task_body").style.display = "none";
+
+                return;
+            }
+
+            listItem.querySelector(".task_edit").style.display = "none";
+            listItem.querySelector(".task_body").style.display = "block";
+        }
+    });
+});

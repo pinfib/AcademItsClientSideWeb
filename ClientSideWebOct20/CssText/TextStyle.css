@@ -1,28 +1,28 @@
 ﻿@media (max-width: 750px) {
-    .special_text {
+    .special_text div {
         width: 100%;
     }
 }
 
 @media (min-width: 751px) {
-    .special_text {
+    .special_text div {
         width: 740px;
         margin: auto;
     }
 }
 
-.container {
+.special_text {
     width: 100%;
     padding: 5px;
 }
 
 .special_text,
-.container {
+.special_text div {
     box-sizing: border-box;
 }
 
-.special_text {
-    padding: 7px;
+.special_text div {
+    padding: 9px;
     background: #feeed6;
     color: #676565;
     font-family: Arial, sans-serif;
@@ -33,21 +33,21 @@
 
 .special_text h1 {
     text-align: left;
-    font-size: 2em;
-    line-height: 1em;
+    font-size: 1.8em;
+    line-height: 1.1em;
     margin-bottom: 11px;
 }
 
 .special_text p + p {
-    margin-top: 11px;
+    margin-top: 8px;
 }
 
 .special_text b {
     color: #378db2;
     font-weight: bold;
-    margin-left: -1em;
+    margin-left: -15px;
 }
 
 .special_text p {
-    text-indent: 1em;
+    text-indent: 15px;
 }

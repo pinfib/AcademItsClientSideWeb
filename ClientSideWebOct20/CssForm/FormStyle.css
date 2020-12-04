@@ -1,7 +1,10 @@
 ﻿@media (max-width: 746px) {
+    body {
+        padding: 0 5px;
+    }
+
     .form_container {
         width: 100%;
-        padding: 0 5px;
     }
 }
 
@@ -13,16 +16,18 @@
 }
 
 .form_container,
-.data_container input,
-.data_container textarea {
+.form_container div,
+.form_container form,
+.form_container input,
+.form_container textarea {
     box-sizing: border-box;
 }
 
-.form_header h1,
+.form_container h1,
 .form_container form,
-.data_container input,
-.data_container textarea,
-.data_container button {
+.form_container input,
+.form_container textarea,
+.form_container button {
     font-family: Arial, sans-serif;
     font-size: 13px;
 }
@@ -36,35 +41,31 @@
     padding: 18px;
 }
 
-.form_header h1 {
+.form_container h1 {
     font-size: 1.8em;
     line-height: 1em;
     margin-bottom: 5px;
     padding-left: 17px;
 }
 
-.data_container {
-    width: 100%;
-}
-
-.data_container b {
+.form_container b {
     font-weight: bold;
 }
 
-.data_container input,
-.data_container textarea {
+.form_container input,
+.form_container textarea {
     width: 100%;
     margin: 7px 0 18px 0;
     border: none;
     padding: 10px 12px;
 }
 
-.data_container textarea {
+.form_container textarea {
     min-height: 113px;
     resize: vertical;
 }
 
-.data_container button {
+.form_container button {
     background-color: #378db2;
     color: #fff;
     padding: 8px 16px;
@@ -74,7 +75,7 @@
     float: right;
 }
 
-.data_container button:hover {
+.form_container button:hover {
     cursor: pointer;
     background: #4da9d0;
 }

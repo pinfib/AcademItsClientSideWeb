@@ -1,10 +1,7 @@
 ﻿@media (max-width: 746px) {
-    body {
-        padding: 0 5px;
-    }
-
     .form_container {
         width: 100%;
+        padding: 0 5px;
     }
 }
 
@@ -30,15 +27,12 @@
 .form_container button {
     font-family: Arial, sans-serif;
     font-size: 13px;
-}
-
-.form_container {
     color: #676565;
 }
 
 .form_container form {
     background: #feeed6;
-    padding: 18px;
+    padding: 18px 18px 13px 18px;
 }
 
 .form_container h1 {

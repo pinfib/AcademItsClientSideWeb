@@ -1,0 +1,89 @@
+﻿@media (max-width: 760px) {
+    .phonebook_container {
+        width: 100%;
+        padding: 5px;
+    }
+}
+
+@media (min-width: 761px) {
+    .phonebook_container {
+        width: 750px;
+        margin: auto;
+    }
+}
+
+.phonebook_container,
+.input_container,
+.search_container {
+    box-sizing: border-box;
+}
+
+.phonebook_container {
+        font-family: Arial, sans-serif;
+        font-size: 15px;
+}
+
+.input_container div,
+.search_container div {
+    padding: 10px;
+}
+
+.input_container,
+.search_container {
+    border: 1px inset #d3d3d3;
+    margin: 15px 0;
+    background: #eee;
+}
+
+.phonebook_container h1 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.phonebook_container label {
+    display: inline-block;
+    width: 140px;
+}
+
+.input_container input {
+    padding: 5px;
+}
+
+.special_table {
+    width: 100%;
+    border: 1px solid #d3d3d3;
+    border-collapse: collapse;
+}
+
+.special_table th {
+    font-weight: bold;
+    color: #fff;
+}
+
+.special_table th,
+.special_table td {
+    padding: 13px 9px;
+    text-align: left;
+    border: solid 1px #d3d3d3;
+}
+
+.special_table thead {
+    background-color: #3498db;
+}
+
+.special_table tbody tr:nth-child(odd) {
+    background-color: #eee;
+}
+
+.special_table tbody tr:nth-child(even) {
+    background-color: #fff;
+}
+
+.error {
+    outline: 1px solid red;
+}
+
+.error_message {
+    margin-left: 5px;
+    color: red;
+}

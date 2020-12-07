@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemperatureConverterTask", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoListTask", "ToDoListTask\ToDoListTask.csproj", "{C04B6143-B11B-4DE3-8E4E-494B4010AFD0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoListJQueryTask", "TodoListJQueryTask\TodoListJQueryTask.csproj", "{35C42B40-D6E8-40AC-938E-E662404F6204}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneBookTask", "PhoneBookTask\PhoneBookTask.csproj", "{E1E67FCE-DB1A-4A9A-85E1-CF5DBF724F94}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +67,14 @@ Global
 		{C04B6143-B11B-4DE3-8E4E-494B4010AFD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C04B6143-B11B-4DE3-8E4E-494B4010AFD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C04B6143-B11B-4DE3-8E4E-494B4010AFD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35C42B40-D6E8-40AC-938E-E662404F6204}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35C42B40-D6E8-40AC-938E-E662404F6204}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35C42B40-D6E8-40AC-938E-E662404F6204}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35C42B40-D6E8-40AC-938E-E662404F6204}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1E67FCE-DB1A-4A9A-85E1-CF5DBF724F94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1E67FCE-DB1A-4A9A-85E1-CF5DBF724F94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1E67FCE-DB1A-4A9A-85E1-CF5DBF724F94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1E67FCE-DB1A-4A9A-85E1-CF5DBF724F94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

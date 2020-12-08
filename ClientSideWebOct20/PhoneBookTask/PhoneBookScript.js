@@ -1,11 +1,11 @@
 ﻿$(document).ready(function () {
     var table = $(".special_table tbody");
 
-    addElement("Иван", "Иванов", "88001234567");  //Тестовые данные
+    /*addElement("Иван", "Иванов", "88001234567");  //Тестовые данные
     addElement("Петр", "Петров", "88001234568");
     addElement("Николай", "Николаев", "87001234567");
     addElement("Иван", "Петров", "88001234569");
-    addElement("Николай", "Иванов", "89001234567");
+    addElement("Николай", "Иванов", "89001234567");*/
 
     $("#add_contact_button").click(function () {                //добавление новой записи
         var firstName = $("#first_name_input");
@@ -52,7 +52,7 @@
             }
         });
 
-        tableRow.find("input[type=checkbox]").click(function () {
+        tableRow.find("input[type=checkbox]").click(function () {           // Если чекбокс в текущей строке false, то чекбокс в шапке тоже должен быть false
             if (!tableRow.find("input[type=checkbox]").prop("checked")) {
                 selectAllCheckbox.prop("checked", false);
             }

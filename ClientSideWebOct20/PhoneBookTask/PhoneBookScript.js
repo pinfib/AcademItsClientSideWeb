@@ -1,12 +1,11 @@
 ﻿$(document).ready(function () {
     var table = $(".special_table tbody");
 
-    //Тестовые данные
-    additionElement("Иван", "Иванов", "88001234567");
-    additionElement("Петр", "Петров", "88001234568");
-    additionElement("Николай", "Николаев", "87001234567");
-    additionElement("Иван", "Петров", "88001234569");
-    additionElement("Николай", "Иванов", "89001234567");
+    addElement("Иван", "Иванов", "88001234567");  //Тестовые данные
+    addElement("Петр", "Петров", "88001234568");
+    addElement("Николай", "Николаев", "87001234567");
+    addElement("Иван", "Петров", "88001234569");
+    addElement("Николай", "Иванов", "89001234567");
 
     $("#add_contact_button").click(function () {                //добавление новой записи
         var firstName = $("#first_name_input");
@@ -24,30 +23,16 @@
 
         if ($(".error").length > 0) { return; }                 //если на странице после валидации появились стили ошибок, выход
 
-        var isContactExist = false;
+        addElement(firstName.val(), lastName.val(), phoneNumber.val());
 
-        table.find(".phone_number").each(function () {
-            isContactExist = $(this).text() === phoneNumber.val();
-
-            if (isContactExist) {
-                return;
-            }
+        $(".input_container input[type=text]").each(function () {
+            $(this).val("");
         });
-
-        if (isContactExist) {
-            setErrorStyle($(this), "Запись с таким номером уже существует");
-        } else {
-            additionElement(firstName.val(), lastName.val(), phoneNumber.val());
-
-            $(".input_container input[type=text]").each(function () {
-                $(this).val("");
-            });
-        }
     });
 
     var selectAllCheckbox = $("#select_all");
 
-    function additionElement(firstName, lastName, phoneNumber) {
+    function addElement(firstName, lastName, phoneNumber) {
         var tableRow = $("<tr>");
 
         tableRow.append($("<td>").html("<input type='checkbox'/>"));
@@ -59,15 +44,15 @@
 
         table.append(tableRow);
 
-        tableRow.find(".delete_row_button").click(function (e) {
+        tableRow.find(".delete_row_button").click(function () {
             if (confirm("Вы уверены, что хотите удалить запись?")) {
                 tableRow.remove();
 
-                resetIndexes();
+                recalculateIndices();
             }
         });
 
-        tableRow.find("input[type=checkbox]").click(function (e) {
+        tableRow.find("input[type=checkbox]").click(function () {
             if (!tableRow.find("input[type=checkbox]").prop("checked")) {
                 selectAllCheckbox.prop("checked", false);
             }
@@ -86,7 +71,7 @@
         }
     }
 
-    function resetIndexes() {
+    function recalculateIndices() {
         table.find("tr").each(function () {
             $(this).find(".position").text($(this).index() + 1);
         });
@@ -119,7 +104,7 @@
                 if ($(this).find("input[type=checkbox]").prop("checked")) {
                     $(this).remove();
 
-                    resetIndexes();
+                    recalculateIndices();
                 }
             });
 

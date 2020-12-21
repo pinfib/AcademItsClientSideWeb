@@ -1,107 +1,106 @@
-﻿(function () {
+﻿// 1. Создайте массив объектов-стран
+// У страны есть название и список городов
+// У города есть название и численность населения
 
-    // 1. Создайте массив объектов-стран
-    // У страны есть название и список городов
-    // У города есть название и численность населения
-
-    var countries = [
+function createCountriesList() {
+    return [
         {
-            "countryName": "Страна 1",
-            "citiesList": [
+            name: "Страна1",
+            cities: [
                 {
-                    "cityName": "Город 1",
-                    "population": 100
+                    name: "Город1",
+                    population: 100
                 },
                 {
-                    "cityName": "Город 2",
-                    "population": 200
+                    name: "Город2",
+                    population: 200
                 }
             ]
         },
         {
-            "countryName": "Страна 2",
-            "citiesList": [
+            name: "Страна2",
+            cities: [
                 {
-                    "cityName": "Город 1",
-                    "population": 200
+                    name: "Город1",
+                    population: 200
                 },
                 {
-                    "cityName": "Город 2",
-                    "population": 300
+                    name: "Город2",
+                    population: 300
                 },
                 {
-                    "cityName": "Город 3",
-                    "population": 100
+                    name: "Город3",
+                    population: 100
                 }
             ]
         },
         {
-            "countryName": "Страна 3",
-            "citiesList": [
+            name: "Страна3",
+            cities: [
                 {
-                    "cityName": "Город 1",
-                    "population": 100
+                    name: "Город1",
+                    population: 100
                 }
             ]
         },
         {
-            "countryName": "Страна 4",
-            "citiesList": [
+            name: "Страна4",
+            cities: [
                 {
-                    "cityName": "Город 1",
-                    "population": 150
+                    name: "Город1",
+                    population: 150
                 },
                 {
-                    "cityName": "Город 2",
-                    "population": 100
+                    name: "Город2",
+                    population: 100
                 },
                 {
-                    "cityName": "Город 3",
-                    "population": 100
+                    name: "Город3",
+                    population: 100
                 }
             ]
         },
         {
-            "countryName": "Страна 5",
-            "citiesList": []
+            name: "Страна5",
+            cities: []
         }
     ];
+}
 
-    (function () {
-        console.log("Список стран:");
-        console.log(countries);
-    })();
+// 2. Найдите страну/страны с максимальным количеством городов
 
-    // 2. Найдите страну/страны с максимальным количеством городов
+function getCountriesByMaxCitiesCount(countriesList) {
+    var maxCitiesCount = countriesList.reduce(function (result, country) {
+        return Math.max(country.cities.length, result);
+    }, 0);
 
-    (function () {
-        var maxCitiesCount = countries.reduce(function (result, country) {
-            return Math.max(country.citiesList.length, result);
+    return countriesList.filter(function (country) {
+        return country.cities.length === maxCitiesCount;
+    });
+}
+
+// 3. Получите объект с информацией по всем странам такого вида: 
+// ключ – название страны, 
+// значение – суммарная численность по стране
+
+function getSpecialObject(countriesList) {
+    return countriesList.reduce(function (specialObject, country) {
+        var totalPopulation = country.cities.reduce(function (result, city) {
+            return result + city.population;
         }, 0);
 
-        var biggestCountries = countries.filter(function (country) {
-            return country.citiesList.length === maxCitiesCount;
-        });
+        specialObject[country.name] = totalPopulation;
 
-        console.log("Список стран c максимальным количеством городов:");
-        console.log(biggestCountries);
-    })();
+        return specialObject;
+    }, {});
+}
 
-    // 3. Получите объект с информацией по всем странам такого вида: 
-    // ключ – название страны, 
-    // значение – суммарная численность по стране
+(function () {
+    var countries = createCountriesList();
 
-    (function () {
-        var countriesMap = countries.map(function (country) {
-            var totalPopulation = country.citiesList.reduce(function (result, city) { return result + city.population; }, 0);
+    console.log("Список стран:", countries);
 
-            return {
-                "countryName": country.countryName,
-                "totalPopulation": totalPopulation
-            }
-        });
+    console.log("Список стран c максимальным количеством городов:", getCountriesByMaxCitiesCount(countries));
 
-        console.log("Информация по странам:");
-        console.log(countriesMap);
-    })();
+    console.log("Информация по странам:", getSpecialObject(countries));
 })();

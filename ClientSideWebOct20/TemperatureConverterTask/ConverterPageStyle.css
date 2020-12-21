@@ -1,19 +1,6 @@
-﻿@media (max-width: 720px) {
-    .data_container {
-        width: 100%;
-    }
-}
-
-@media (min-width: 721px) {
-    .data_container {
-        width: 700px;
-        margin: auto;
-    }
-}
-
-.converter_container {
+﻿.converter_container {
     width: 100%;
-    background: darkcyan;
+    background: #008b8b;
 }
 
 .temperature_result {
@@ -43,10 +30,10 @@
 }
 
 .data_container {
-    width: 700px;
+    max-width: 700px;
     margin: auto;
     text-align: center;
-    background: lightcyan;
+    background: #e0ffff;
 }
 
 .data_container h1 {
@@ -69,14 +56,19 @@
 .data_container button {
     border: #ccc outset 1px;
     font-weight: bold;
-    background: white;
+    background: #fff;
 }
 
 .data_container button:hover {
-    background: darkcyan;
-    color: white;
+    background: #008b8b;
+    color: #fff;
     border-style: inset;
     cursor: pointer;
+}
+
+.error_message {
+    min-height: 16px;
+    color: #ff0000;
 }
 
 .empty_element {

@@ -1,14 +1,6 @@
-﻿@media (max-width: 870px) {
-    .todo_list_container {
-        width: 100%;
-    }
-}
-
-@media (min-width: 871px) {
-    .todo_list_container {
-        width: 850px;
-        margin: auto;
-    }
+﻿.todo_list_container {
+    max-width: 850px;
+    margin: auto;
 }
 
 .input_container {
@@ -40,15 +32,14 @@
 .todo_list_container button,
 .elements_container input,
 .elements_container button,
-.error_message p {
+.error_message {
     font-family: Arial, sans-serif;
     font-size: 17px;
 }
 
 .todo_list_container,
 .input_container,
-.elements_container,
-.error_message {
+.elements_container {
     padding: 15px;
 }
 
@@ -57,8 +48,8 @@
     margin: 5px;
 }
 
-.error_message p {
-    color: red;
+.error_message {
+    color: #ff0000;
 }
 
 .input_container input,
@@ -85,7 +76,7 @@
 .elements_container button:hover {
     cursor: pointer;
     border-style: inset;
-    background: lightgray;
+    background: #d3d3d3;
 }
 
 .elements_container ul {

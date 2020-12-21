@@ -1,27 +1,11 @@
-﻿@media (max-width: 750px) {
-    .special_text div {
-        width: 100%;
-    }
-}
-
-@media (min-width: 751px) {
-    .special_text div {
-        width: 740px;
-        margin: auto;
-    }
-}
-
-.special_text {
-    width: 100%;
+﻿body {
     padding: 5px;
 }
 
-.special_text,
-.special_text div {
+.special_text {
     box-sizing: border-box;
-}
-
-.special_text div {
+    max-width: 740px;
+    margin: auto;
     padding: 9px;
     background: #feeed6;
     color: #676565;
@@ -39,7 +23,7 @@
 }
 
 .special_text p + p {
-    margin-top: 8px;
+    margin-top: 10px;
 }
 
 .special_text b {

@@ -1,78 +1,75 @@
-﻿(function () {
-    // 1. Создайте массив чисел
+﻿function createRandomNumbersArray(count) {
+    var array = [];
 
-    var randomNumbersArray = [];
-
-    (function () {
-        for (var i = 0; i < 20; i++) {
-            randomNumbersArray.push(Math.round(Math.random() * 50));
-        }
-
-        console.log("Массив случайных чисел:");
-        console.log(randomNumbersArray);
-    })();
-
-    // 2. Отсортируйте его по убыванию
-
-    (function () {
-        randomNumbersArray.sort(function (number1, number2) {
-            return number2 - number1;
-        });
-
-        console.log("Массив отсортирован по убыванию:");
-        console.log(randomNumbersArray);
-    })();
-
-    // 3. Получите подмассив из первых 5 элементов и подмассив из последних 5 элементов
-
-    (function () {
-        console.log("Подмассив из первых 5 элементов:");
-        console.log(randomNumbersArray.slice(0, 5));
-
-        console.log("Подмассив из последних 5 элементов:");
-        console.log(randomNumbersArray.slice(randomNumbersArray.length - 5));
-    })();
-
-    // 4. Найдите сумму элементов массива, которые являются четными числами
-
-    function isEvenNumber(number) {
-        return number % 2 === 0;
+    for (var i = 0; i < count; i++) {
+        array.push(Math.round(Math.random() * 50));
     }
 
-    (function () {
-        var sum = randomNumbersArray
-            .filter(isEvenNumber)
-            .reduce(function (result, number) {
-                return result + number;
-            }, 0);
+    return array;
+}
 
-        console.log("Сумма чётных:");
-        console.log(sum);
-    })();
+function isEvenNumber(number) {
+    return number % 2 === 0;
+}
 
-    // 5. Создайте массив чисел от 1 до 100, в таком порядке
+function arraySortDescending(array) {
+    array.sort(function (number1, number2) {
+        return number2 - number1;
+    });
+};
 
-    var sortedNumbersArray = [];
+function getArrayElements(array, count, startIndex) {
+    if (startIndex !== undefined) {
+        return array.slice(startIndex, count);
+    }
 
-    (function () {
-        for (var i = 1; i <= 100; i++) {
-            sortedNumbersArray.push(i);
-        }
+    return array.slice(count);
+}
 
-        console.log("Массив чисел от 1 до 100:");
-        console.log(sortedNumbersArray);
-    })();
+function evenNumbersSum(array) {
+    return array
+        .filter(isEvenNumber)
+        .reduce(function (result, number) {
+            return result + number;
+        }, 0);
+}
 
-    // 6. Получите список квадратов четных чисел из этого массива	
+function createSortedArray(count) {
+    var array = [];
 
-    (function () {
-        var numbersSquaredArray = sortedNumbersArray
-            .filter(isEvenNumber)
-            .map(function (number) {
-                return Math.pow(number, 2);
-            });
+    for (var i = 1; i <= count; i++) {
+        array.push(i);
+    }
 
-        console.log("Список квадратов четных чисел:");
-        console.log(numbersSquaredArray);
-    })();
+    return array;
+}
+
+function getEvenNumbersSquared(array) {
+    return array
+        .filter(isEvenNumber)
+        .map(function (number) {
+            return Math.pow(number, 2);
+        });
+}
+
+(function () {
+    var randomNumbersArray = createRandomNumbersArray(20);
+
+    console.log("Массив случайных чисел:", randomNumbersArray);
+
+    arraySortDescending(randomNumbersArray);
+
+    console.log("Массив отсортирован по убыванию:", randomNumbersArray);
+
+    console.log("Подмассив из первых 5 элементов:", getArrayElements(randomNumbersArray, 5, 0));
+
+    console.log("Подмассив из последних 5 элементов:", getArrayElements(randomNumbersArray, -5));
+
+    console.log("Сумма чётных:", evenNumbersSum(randomNumbersArray));
+
+    var sortedNumbersArray = createSortedArray(100);
+
+    console.log("Массив чисел от 1 до 100:", sortedNumbersArray);
+
+    console.log("Список квадратов четных чисел:", getEvenNumbersSquared(sortedNumbersArray));
 })();

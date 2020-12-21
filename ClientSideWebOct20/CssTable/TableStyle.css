@@ -1,23 +1,12 @@
-﻿@media (max-width: 760px) {
-    .special_table {
-        width: 100%;
-    }
-}
-
-@media (min-width: 761px) {
-    .special_table {
-        width: 750px;
-        margin: auto;
-    }
-}
-
-.table_container {
-    width: 100%;
+﻿.table_container {
+    max-width: 750px;
+    margin: auto;
     padding: 5px;
     box-sizing: border-box;
 }
 
 .special_table {
+    width: 100%;
     font-family: Arial, sans-serif;
     font-size: 19px;
     border: solid 1px #d3d3d3;

@@ -7,27 +7,25 @@
     addElement("Иван", "Петров", "88001234569");
     addElement("Николай", "Иванов", "89001234567");*/
 
-    $("#add_contact_button").click(function () {                //добавление новой записи
+    $("#add_contact_button").click(function () {                // добавление новой записи
         var firstName = $("#first_name_input");
         var lastName = $("#last_name_input");
         var phoneNumber = $("#phone_number_input");
 
-        $(".error_message").remove();                           //сбросить стили ошибок
-        $(".error").each(function () {
-            $(this).removeClass("error");
-        });
+        $(".error_message").remove();                           // сбросить стили ошибок
+        $(".error").removeClass("error");
 
         validation(firstName, /[^a-zа-я]/i, firstName.val());
         validation(lastName, /[^a-zа-я]/i, lastName.val());
         validation(phoneNumber, /[^0-9#\*]/, phoneNumber.val());
 
-        if ($(".error").length > 0) { return; }                 //если на странице после валидации появились стили ошибок, выход
+        if ($(".error").length > 0) {                           // если на странице после валидации появились стили ошибок, выход
+            return;
+        }
 
         addElement(firstName.val(), lastName.val(), phoneNumber.val());
 
-        $(".input_container input[type=text]").each(function () {
-            $(this).val("");
-        });
+        $(".input_container input[type=text]").val("");
     });
 
     var selectAllCheckbox = $("#select_all");
@@ -72,24 +70,21 @@
     }
 
     function recalculateIndices() {
-        table.find("tr").each(function () {
-            $(this).find(".position").text($(this).index() + 1);
+        table.find("tr").each(function (index) {
+            $(this).find(".position").text(index + 1);
         });
     }
 
     function setErrorStyle(pageElement, message) {
         pageElement.addClass("error");
-        pageElement.after("<span class='error_message'>" + message + "</span>");
+        var errorMessage = $("<span>");
+        errorMessage.addClass("error_message");
+        errorMessage.text(message);
+        pageElement.after(errorMessage);
     }
 
     selectAllCheckbox.click(function () {
-        if (selectAllCheckbox.prop("checked")) {
-            table.find("input[type=checkbox]").prop("checked", true);
-
-            return;
-        }
-
-        table.find("input[type=checkbox]").prop("checked", false);
+        table.find("input[type=checkbox]").prop("checked", selectAllCheckbox.prop("checked"));
     });
 
     $("#delete_marked_button").click(function () {
@@ -107,7 +102,6 @@
                     recalculateIndices();
                 }
             });
-
             selectAllCheckbox.prop("checked", false);
         }
     });

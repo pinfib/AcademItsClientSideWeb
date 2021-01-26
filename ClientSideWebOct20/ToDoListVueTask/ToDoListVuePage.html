@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script defer src="node_modules\jquery\dist\jquery.js"></script>
+    <script defer src="node_modules\vue\dist\vue.js"></script>
+    <script defer src="node_modules\bootstrap\dist\js\bootstrap.bundle.js"></script>
+    <script defer src="ToDoListVueScript.js"></script>
+    <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.min.css">
+    <link rel="stylesheet" href="ToDoListVueStyle.css">
+    <title>To-do list</title>
+</head>
+<body>
+    <div v-cloak id="app" class="container rounded">
+        <h1 class="display-4">
+            To-do list (Vue + Bootstrap)
+        </h1>
+        <todo-list></todo-list>
+    </div>
+
+    <script id="todo-list-template" type="text/x-template">
+        <div class="p-2">
+            <div class="row no-gutters">
+                <div class="col">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Новая задача:</span>
+                        </div>
+                        <input v-model="newTodoText" type="text" class="form-control mr-2" placeholder="Введите текст..." aria-label="Task" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="col-">
+                    <button type="button" @click="addNewTodoItem" class="btn btn-primary">Добавить</button>
+                </div>
+            </div>
+            <div class="row pt-2">
+                <div class="col">
+                    <error-item v-for="error in errors"
+                                :message="error.message"
+                                :key="error.message"></error-item>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>Список задач:</p>
+                    <ul class="list-group w-100">
+                        <todo-list-item v-for="item in items"
+                                        @delete-item="deleteItem"
+                                        @save-item="saveEditItem"
+                                        :item="item"
+                                        :key="item.id">
+                        </todo-list-item>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script id="todo-list-item-template" type="text/x-template">
+        <li class="list-group-item">
+            <template v-if="isEditing">
+                <div class="row pl-2">
+                    <div class="col-">
+                        <button @click="saveEditItem" type="button" class="btn btn-primary mr-2">
+                            Сохранить
+                        </button>
+                    </div>
+                    <div class="col-">
+                        <button @click="cancelEdit" type="button" class="btn btn-secondary mr-2">
+                            Отменить
+                        </button>
+                    </div>
+                    <div class="col">
+                        <input v-model="editText" class="form-control" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col pl-2 mt-2">
+                        <error-item v-for="error in errors"
+                                    :message="error.message"
+                                    :key="error.message"></error-item>
+                    </div>
+                </div>
+            </template>
+            <template v-else>
+                <div class="row pl-2">
+                    <div class="col-">
+                        <button @click="startEditItem" type="button" class="btn btn-primary mr-2">
+                            Изменить
+                        </button>
+                    </div>
+                    <div class="col-">
+                        <button @click="deleteItem" type="button" class="btn btn-danger mr-2">
+                            Удалить
+                        </button>
+                    </div>
+                    <div class="col">
+                        <span>
+                            {{item.text}}
+                        </span>
+                    </div>
+                </div>
+            </template>
+        </li>
+    </script>
+
+    <script id="error-item-template" type="text/x-template">
+        <div class="alert alert-danger m-0" role="alert">
+            {{message}}
+        </div>
+    </script>
+</body>
+</html>

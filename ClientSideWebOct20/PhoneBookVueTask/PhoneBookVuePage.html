@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script defer src="node_modules\jquery\dist\jquery.js"></script>
+    <script defer src="node_modules\vue\dist\vue.js"></script>
+    <script defer src="node_modules\bootstrap\dist\js\bootstrap.bundle.js"></script>
+    <script defer src="node_modules\underscore\underscore.js"></script>
+    <script defer src="PhoneBookVueScript.js"></script>
+    <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.min.css">
+    <link rel="stylesheet" href="PhoneBookVueStyle.css">
+    <title>Phone Book Vue</title>
+</head>
+<body>
+    <div v-cloak id="app" class="container rounded">
+        <h1 class="display-4">
+            Phone Book (Vue + Bootstrap)
+        </h1>
+        <new-contact-input></new-contact-input>
+    </div>
+
+    <script id="new-contact-input-template" type="text/x-template">
+        <div>
+            <div class="row">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="new-contact-first-name">Имя: </span>
+                    </div>
+                    <input type="text" v-model="newContactFirstName" class="form-control" placeholder="Введите имя..." aria-describedby="new-contact-first-name">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="new-contact-last-name">Фамилия: </span>
+                    </div>
+                    <input type="text" v-model="newContactLastName" class="form-control" placeholder="Введите фамилию..." aria-describedby="new-contact-last-name">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="new-contact-phone-number">Номер телефона: </span>
+                    </div>
+                    <input type="text" v-model="newContactPhoneNumber" class="form-control" placeholder="Введите номер телефона..." aria-describedby="new-contact-phone-number">
+                </div>
+                <button type="button" @click="addNewContact" class="btn btn-primary mr-3">Добавить</button>
+                <button type="button" class="btn btn-secondary">Очистить</button>
+            </div>
+            <div class="errors-list row">
+                <ul>
+                    <li v-for="error in errorsList">{{error.message}}</li>
+                </ul>
+            </div>
+            <div class="filter-field border rounded w-75 mt-3 mx-auto p-0">
+                <div class="row p-3">
+                    <div class="col">
+                        <input type="text" v-model="contactFilter" class="form-control" placeholder="Фильтр...">
+                    </div>
+                    <div class="col-">
+                        <button type="button" @click="clearFilterInput" class="btn btn-secondary mr-3">Очистить</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Имя</th>
+                            <th scope="col">Фамилия</th>
+                            <th scope="col">Телефон</th>
+                            <th scope="col">Удаление</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <contact-item v-for="contact in filteredContacts"
+                                        @delete-contact="deleteContact"
+                                        :contact="contact"
+                                        :key="contact.id">
+                        </contact-item>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </script>
+
+    <script id="contact-item-template" type="text/x-template">
+        <tr>
+            <th scope="row">{{contact.index}}</th>
+            <td>{{contact.firstName}}</td>
+            <td>{{contact.lastName}}</td>
+            <td>{{contact.phoneNumber}}</td>
+            <td><button type="button" @click="deleteContact" class="btn btn-danger">x</button></td>
+        </tr>
+    </script>
+</body>
+</html> 
